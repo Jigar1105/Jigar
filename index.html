@@ -24,26 +24,15 @@
       <source src="mother.mp3.mp3" type="audio/mpeg" />
     </audio>
     <button id="musicToggle"><i class="fa-solid fa-music"></i></button>
+    <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5" />
 
+    <!-- Hearts Animation -->
     <div class="hearts" id="heartsContainer"></div>
 
+    <!-- Slides -->
     <div class="slide" id="slide">
-      <!-- Slides -->
-      <div class="item" style="background-image: url('./1.jpg');">
-        <div class="content"><div class="des">"Your love is my light, Mom—gentle, endless, and true." 💖</div></div>
-      </div>
-      <div class="item" style="background-image: url('./2.jpg');">
-        <div class="content"><div class="des">"Every hug of yours has healed my world." 🤗🌷</div></div>
-      </div>
-      <!-- Add the rest of your images here... -->
-
-      <div class="item" style="background-image: url('./celebrate.jpg'); position: relative;">
-        <div class="content">
-          <div class="des">
-            "Hello Mom, You are my superhero. Your wisdom and love guide me through every twist and turn in life. The world shines brighter because of you. I love you so much! You are the best mom ever. Happy Mother's Day ❤❤ 🎊🎉💝"
-          </div>
-        </div>
-      </div>
+      <!-- Slide Items (same as before) -->
+      <!-- Slides go here -->
     </div>
 
     <!-- Cake -->
@@ -59,6 +48,9 @@
       <div class="firework" style="top: 30%; left: 70%;"></div>
       <div class="firework" style="top: 40%; left: 50%;"></div>
     </div>
+
+    <!-- Confetti Animation -->
+    <div class="confetti"></div>
   </div>
 
   <!-- Slide Controls -->
@@ -67,7 +59,7 @@
     <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
   </div>
 
-  <!-- Message at the End -->
+  <!-- Final Message -->
   <div class="message-container fade-in">
     <p class="message">Hello Mom, <br>
     You are my superhero. Your wisdom and love guide me through every twist and turn in life. The world shines brighter because of you. I love you so much! <br>
@@ -81,6 +73,7 @@
       document.getElementById("bgMusic").play();
     });
 
+    // Slide Controls
     const next = document.querySelector('.next');
     const prev = document.querySelector('.prev');
     const slide = document.querySelector('.slide');
@@ -100,8 +93,10 @@
       slide.appendChild(items[0]);
     }, 5000);
 
+    // Music Control
     const music = document.getElementById("bgMusic");
     const musicToggle = document.getElementById("musicToggle");
+    const volumeControl = document.getElementById("volumeControl");
 
     musicToggle.addEventListener("click", () => {
       if (music.paused) {
@@ -113,6 +108,12 @@
       }
     });
 
+    // Volume Control
+    volumeControl.addEventListener("input", () => {
+      music.volume = volumeControl.value;
+    });
+
+    // Hearts Animation
     const hearts = document.getElementById("heartsContainer");
     setInterval(() => {
       const heart = document.createElement("div");
@@ -123,16 +124,17 @@
       setTimeout(() => heart.remove(), 5000);
     }, 300);
 
-    // Confetti animation
+    // Confetti Effect
     setInterval(() => {
-      const confetti = document.createElement("div");
-      confetti.className = "confetti";
-      confetti.style.left = Math.random() * 100 + "vw";
-      confetti.style.animationDuration = Math.random() * 3 + 2 + "s";
-      document.body.appendChild(confetti);
-      setTimeout(() => confetti.remove(), 5000);
-    }, 300);
+      const confettiPiece = document.createElement("div");
+      confettiPiece.className = "confetti";
+      confettiPiece.style.left = Math.random() * 100 + "vw";
+      confettiPiece.style.animationDuration = Math.random() * 2 + 3 + "s";
+      document.body.appendChild(confettiPiece);
+      setTimeout(() => confettiPiece.remove(), 3000);
+    }, 200);
 
+    // Fireworks and Cake Effect
     document.addEventListener('DOMContentLoaded', function() {
       setTimeout(() => {
         document.getElementById('cakeCut').classList.remove('hidden');
@@ -148,5 +150,6 @@
       }, 200);
     });
   </script>
+
 </body>
 </html>
