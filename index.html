@@ -24,46 +24,73 @@
       <source src="mother.mp3.mp3" type="audio/mpeg" />
     </audio>
     <button id="musicToggle"><i class="fa-solid fa-music"></i></button>
-    <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5" />
 
-    <!-- Hearts Animation -->
     <div class="hearts" id="heartsContainer"></div>
 
-    <!-- Slides -->
     <div class="slide" id="slide">
-      <!-- Slide Items (same as before) -->
-      <!-- Slides go here -->
+      <!-- Slides -->
+      <div class="item" style="background-image: url('./1.jpg');">
+        <div class="content"><div class="des">"Your love is my light, Mom—gentle, endless, and true." 💖</div></div>
+      </div>
+      <div class="item" style="background-image: url('./2.jpg');">
+        <div class="content"><div class="des">"Every hug of yours has healed my world." 🤗🌷</div></div>
+      </div>
+      <div class="item" style="background-image: url('./3.jpg');">
+        <div class="content"><div class="des">"In your arms, I found home. In your words, I found strength." 🏡✨</div></div>
+      </div>
+      <div class="item" style="background-image: url('./4.jpg');">
+        <div class="content"><div class="des">"Thank you for your silent sacrifices and endless love." 🙏❤️</div></div>
+      </div>
+      <div class="item" style="background-image: url('./5.jpg');">
+        <div class="content"><div class="des">"The world shines brighter because you're in it, Mom." 🌎💫</div></div>
+      </div>
+      <div class="item" style="background-image: url('./6.jpg');">
+        <div class="content"><div class="des">"To my superhero in a saree—you’re my everything." 🦸‍♀️🌸</div></div>
+      </div>
+      <div class="item" style="background-image: url('./7.jpg');">
+        <div class="content"><div class="des">"You believed in me before I even knew how to try." 🌈🫶</div></div>
+      </div>
+      <div class="item" style="background-image: url('./8.jpg');">
+        <div class="content"><div class="des">"All I am is a reflection of your love." 🪞💕</div></div>
+      </div>
+      <div class="item" style="background-image: url('./9.jpg');">
+        <div class="content"><div class="des">"From lullabies to life lessons—thank you, Maa." 🎵📖</div></div>
+      </div>
+      <div class="item" style="background-image: url('./celebrate.jpg'); position: relative;">
+        <div class="content">
+          <div class="des">"Hello Mom,
+You are my superhero.Your wisdom and love guide me through every twist and turn in life.The world shines brighter because of you. I love you so much!
+you are the best mom ever.
+
+Happy mother's Day ❤❤" 🎊🎉💝</div>
+        </div>
+        <!-- Cake -->
+        <div id="cakeContainer" class="cake-container">
+          <img id="cakeImage" src="./images/mothers-day-cake.jpg" alt="Mother's Day Cake" class="cake-image">
+          <div id="cakeCut" class="cake-cut hidden"></div>
+        </div>
+        <!-- Fireworks -->
+        <div class="fireworks-container">
+          <div class="firework" style="top: 10%; left: 10%;"></div>
+          <div class="firework" style="top: 20%; left: 20%;"></div>
+          <div class="firework" style="top: 30%; left: 70%;"></div>
+          <div class="firework" style="top: 40%; left: 50%;"></div>
+        </div>
+      </div>
     </div>
 
-    <!-- Cake -->
-    <div id="cakeContainer" class="cake-container">
-      <img id="cakeImage" src="./images/mothers-day-cake.jpg" alt="Mother's Day Cake" class="cake-image">
-      <div id="cakeCut" class="cake-cut hidden"></div>
+    <!-- Slide Controls -->
+    <div class="button">
+      <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+      <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
     </div>
 
-    <!-- Fireworks -->
-    <div class="fireworks-container">
-      <div class="firework" style="top: 10%; left: 10%;"></div>
-      <div class="firework" style="top: 20%; left: 20%;"></div>
-      <div class="firework" style="top: 30%; left: 70%;"></div>
-      <div class="firework" style="top: 40%; left: 50%;"></div>
+    <!-- Message at the End -->
+    <div class="message-container fade-in">
+      <p class="message">Hello Mom, <br>
+      You are my superhero. Your wisdom and love guide me through every twist and turn in life. The world shines brighter because of you. I love you so much! <br>
+      You are the best mom ever. <br><br> Happy Mother's Day ❤❤ </p>
     </div>
-
-    <!-- Confetti Animation -->
-    <div class="confetti"></div>
-  </div>
-
-  <!-- Slide Controls -->
-  <div class="button">
-    <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
-    <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
-  </div>
-
-  <!-- Final Message -->
-  <div class="message-container fade-in">
-    <p class="message">Hello Mom, <br>
-    You are my superhero. Your wisdom and love guide me through every twist and turn in life. The world shines brighter because of you. I love you so much! <br>
-    You are the best mom ever. <br><br> Happy Mother's Day ❤❤ </p>
   </div>
 
   <script>
@@ -73,7 +100,6 @@
       document.getElementById("bgMusic").play();
     });
 
-    // Slide Controls
     const next = document.querySelector('.next');
     const prev = document.querySelector('.prev');
     const slide = document.querySelector('.slide');
@@ -93,10 +119,8 @@
       slide.appendChild(items[0]);
     }, 5000);
 
-    // Music Control
     const music = document.getElementById("bgMusic");
     const musicToggle = document.getElementById("musicToggle");
-    const volumeControl = document.getElementById("volumeControl");
 
     musicToggle.addEventListener("click", () => {
       if (music.paused) {
@@ -108,12 +132,6 @@
       }
     });
 
-    // Volume Control
-    volumeControl.addEventListener("input", () => {
-      music.volume = volumeControl.value;
-    });
-
-    // Hearts Animation
     const hearts = document.getElementById("heartsContainer");
     setInterval(() => {
       const heart = document.createElement("div");
@@ -124,17 +142,6 @@
       setTimeout(() => heart.remove(), 5000);
     }, 300);
 
-    // Confetti Effect
-    setInterval(() => {
-      const confettiPiece = document.createElement("div");
-      confettiPiece.className = "confetti";
-      confettiPiece.style.left = Math.random() * 100 + "vw";
-      confettiPiece.style.animationDuration = Math.random() * 2 + 3 + "s";
-      document.body.appendChild(confettiPiece);
-      setTimeout(() => confettiPiece.remove(), 3000);
-    }, 200);
-
-    // Fireworks and Cake Effect
     document.addEventListener('DOMContentLoaded', function() {
       setTimeout(() => {
         document.getElementById('cakeCut').classList.remove('hidden');
@@ -150,6 +157,5 @@
       }, 200);
     });
   </script>
-
 </body>
 </html>
