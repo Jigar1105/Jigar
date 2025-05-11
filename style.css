@@ -1,8 +1,9 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(to right, #8e44ad, #6c5ce7); /* Soft purple-blue gradient */
+  background: linear-gradient(to bottom, #8a2be2, #add8e6); /* Soft purple-blue gradient */
   overflow-x: hidden;
+  color: #fff;
 }
 
 .hidden {
@@ -146,7 +147,7 @@ body {
   font-size: 18px;
   color: #d6336c;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Cake Animation */
@@ -238,21 +239,24 @@ body {
   }
 }
 
-/* Final Message */
-.final-message {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* Fade-in Animation */
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+}
+
+.message {
+  font-size: 1.4em;
+  font-family: 'Great Vibes', cursive;
+  color: #fff;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 12px;
-  backdrop-filter: blur(6px);
-  color: white;
-  font-size: 1.5em;
-  animation: fadeIn 3s ease-in-out;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
 }
 
 @keyframes fadeIn {
