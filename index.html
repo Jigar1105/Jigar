@@ -60,13 +60,11 @@
         <div class="content">
           <div class="des">"Celebrating the heart of our family. Happy Mother’s Day!" 🎊🎉💝</div>
         </div>
-
         <!-- Cake -->
         <div id="cakeContainer" class="cake-container">
           <img id="cakeImage" src="./images/mothers-day-cake.jpg" alt="Mother's Day Cake" class="cake-image">
           <div id="cakeCut" class="cake-cut hidden"></div>
         </div>
-
         <!-- Fireworks -->
         <div class="fireworks-container">
           <div class="firework" style="top: 10%; left: 10%;"></div>
@@ -77,7 +75,7 @@
       </div>
     </div>
 
-    <!-- Controls -->
+    <!-- Slide Controls -->
     <div class="button">
       <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
       <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
@@ -133,11 +131,10 @@
       setTimeout(() => heart.remove(), 5000);
     }, 300);
 
-    // Cake celebration (Changed from 4000 to 6000 ms)
     document.addEventListener('DOMContentLoaded', function() {
       setTimeout(() => {
         document.getElementById('cakeCut').classList.remove('hidden');
-      }, 6000); // 6 second delay
+      }, 6000);
 
       setInterval(() => {
         const sparkle = document.createElement("div");
