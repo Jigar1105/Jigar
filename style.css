@@ -15,13 +15,14 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 20px;
   background-color: #ffe4e1;
   text-align: center;
 }
 
 .intro-screen h1 {
   font-family: 'Great Vibes', cursive;
-  font-size: 3.5em;
+  font-size: 3em;
   color: #d6336c;
 }
 
@@ -60,7 +61,7 @@ body {
   background: #fff;
   color: #d6336c;
   border: none;
-  padding: 12px 16px;
+  padding: 12px;
   border-radius: 50%;
   font-size: 20px;
   cursor: pointer;
@@ -110,30 +111,30 @@ body {
 .content {
   position: absolute;
   bottom: 15%;
-  left: 10%;
-  right: 10%;
+  left: 5%;
+  right: 5%;
   background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
+  padding: 16px;
   border-radius: 12px;
   backdrop-filter: blur(6px);
   text-align: center;
 }
 
 .des {
-  font-size: 1.8em;
+  font-size: 1.5em;
   color: #fff;
+  font-family: 'Great Vibes', cursive;
   font-weight: 700;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-  font-family: 'Great Vibes', cursive;
 }
 
 .button {
   position: absolute;
   width: 100%;
-  bottom: 30px;
+  bottom: 20px;
   display: flex;
   justify-content: space-between;
-  padding: 0 30px;
+  padding: 0 20px;
   z-index: 100;
 }
 
@@ -141,8 +142,8 @@ body {
   background: #fff;
   border: none;
   border-radius: 50%;
-  padding: 15px 18px;
-  font-size: 20px;
+  padding: 12px;
+  font-size: 18px;
   color: #d6336c;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -159,7 +160,8 @@ body {
 }
 
 .cake-image {
-  width: 80%;
+  width: 90%;
+  max-width: 320px;
   height: auto;
   animation: cakeSlideIn 2s ease-out;
 }
@@ -200,7 +202,7 @@ body {
   }
 }
 
-/* Fireworks Animation */
+/* Fireworks */
 .fireworks-container {
   position: absolute;
   top: 10%;
@@ -217,6 +219,19 @@ body {
   height: 20px;
   border-radius: 50%;
   background-color: #ff69b4;
-  opacity: 0;
-  animation: fireworkAnimation 
+  opacity: 0.8;
+  animation: pop 1s ease-out infinite;
 }
+
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
