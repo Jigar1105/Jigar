@@ -11,11 +11,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
+  <!-- Floating Elements -->
+  <div class="floating-elements">
+    <div class="floating-element flower"><img src="rose1.png" alt="rose"></div>
+    <div class="floating-element flower"><img src="rose2.png" alt="rose"></div>
+    <div class="floating-element flower"><img src="rose3.png" alt="rose"></div>
+    <div class="floating-element flower"><img src="rose4.png" alt="rose"></div>
+  </div>
+
   <!-- Intro Screen -->
   <div class="intro-screen" id="intro">
-    <h1>💐 Happy Mother's Day 💐</h1>
-    <p>Click below to open a special surprise...</p>
-    <button id="openBtn">Open</button>
+    <div class="intro-content">
+      <h1 class="animated-title">💐 Happy Mother's Day 💐</h1>
+      <p class="animated-text">Click below to open a special surprise...</p>
+      <button id="openBtn" class="pulse-button">Open</button>
+    </div>
   </div>
 
   <!-- Main Content -->
@@ -23,14 +33,20 @@
     <audio id="bgMusic" loop>
       <source src="mother.mp3.mp3" type="audio/mpeg" />
     </audio>
-    <button id="musicToggle"><i class="fa-solid fa-music"></i></button>
+    <button id="musicToggle" class="floating-button"><i class="fa-solid fa-music"></i></button>
 
     <div class="hearts" id="heartsContainer"></div>
 
     <div class="slide" id="slide">
       <!-- Slides -->
-      <div class="item" style="background-image: url('./1.jpg');">
+      <div class="item active" style="background-image: url('./1.jpg');">
         <div class="content"><div class="des">"Your love is my light, Mom—gentle, endless, and true." 💖</div></div>
+      </div>
+      <div class="item active" style="background-image: url('./1.jpg');">
+        <div class="content"><div class="des">"Your love is my light, Mom—gentle, endless, and true." 💖</div></div>
+      </div>
+      <div class="item" style="background-image: url('./10.jpg');">
+        <div class="content"><div class="des">"Every hug of yours has healed my world." 🤗🌷</div></div>
       </div>
       <div class="item" style="background-image: url('./10.jpg');">
         <div class="content"><div class="des">"Every hug of yours has healed my world." 🤗🌷</div></div>
@@ -38,14 +54,29 @@
       <div class="item" style="background-image: url('./3.jpg');">
         <div class="content"><div class="des">"In your arms, I found home. In your words, I found strength." 🏡✨</div></div>
       </div>
+      <div class="item" style="background-image: url('./3.jpg');">
+        <div class="content"><div class="des">"In your arms, I found home. In your words, I found strength." 🏡✨</div></div>
+      </div>
+      <div class="item" style="background-image: url('./4.jpg');">
+        <div class="content"><div class="des">"Thank you for your silent sacrifices and endless love." 🙏❤️</div></div>
+      </div>
       <div class="item" style="background-image: url('./4.jpg');">
         <div class="content"><div class="des">"Thank you for your silent sacrifices and endless love." 🙏❤️</div></div>
       </div>
       <div class="item" style="background-image: url('./11.jpg');">
         <div class="content"><div class="des">"The world shines brighter because you're in it, Mom." 🌎💫</div></div>
       </div>
+      <div class="item" style="background-image: url('./11.jpg');">
+        <div class="content"><div class="des">"The world shines brighter because you're in it, Mom." 🌎💫</div></div>
+      </div>
       <div class="item" style="background-image: url('./6.jpg');">
-        <div class="content"><div class="des">"To my superhero in a saree—you’re my everything." 🦸‍♀️🌸</div></div>
+        <div class="content"><div class="des">"To my superhero in a saree—you're my everything." 🦸‍♀️🌸</div></div>
+      </div>
+      <div class="item" style="background-image: url('./6.jpg');">
+        <div class="content"><div class="des">"To my superhero in a saree—you're my everything." 🦸‍♀️🌸</div></div>
+      </div>
+      <div class="item" style="background-image: url('./7.jpg');">
+        <div class="content"><div class="des">"You believed in me before I even knew how to try." 🌈🫶</div></div>
       </div>
       <div class="item" style="background-image: url('./7.jpg');">
         <div class="content"><div class="des">"You believed in me before I even knew how to try." 🌈🫶</div></div>
@@ -53,72 +84,103 @@
       <div class="item" style="background-image: url('./8.jpg');">
         <div class="content"><div class="des">"All I am is a reflection of your love." 🪞💕</div></div>
       </div>
+      <div class="item" style="background-image: url('./8.jpg');">
+        <div class="content"><div class="des">"All I am is a reflection of your love." 🪞💕</div></div>
+      </div>
       <div class="item" style="background-image: url('./9.jpg');">
         <div class="content"><div class="des">"From lullabies to life lessons—thank you, Maa." 🎵📖</div></div>
       </div>
-      <div class="item" style="background-image: url('./12.jpg'); position: relative;">
-        <div class="content">
-          <div class="des">"Hello Mom,
-You are my superhero.Your wisdom and love guide me through every twist and turn in life.The world shines brighter because of you. I love you so much!
-you are the best mom ever.
-
-Happy mother's Day ❤❤" 🎊🎉💝</div>
-        </div>
-        <!-- Cake -->
-        <div id="cakeContainer" class="cake-container">
-          
-          <div id="cakeCut" class="cake-cut hidden"></div>
-        </div>
-        <!-- Fireworks -->
-        <div class="fireworks-container">
-          <div class="firework" style="top: 10%; left: 10%;"></div>
-          <div class="firework" style="top: 20%; left: 20%;"></div>
-          <div class="firework" style="top: 30%; left: 70%;"></div>
-          <div class="firework" style="top: 40%; left: 50%;"></div>
-        </div>
+      <div class="item" style="background-image: url('./9.jpg');">
+        <div class="content"><div class="des">"From lullabies to life lessons—thank you, Maa." 🎵📖</div></div>
+      </div>
+      <div class="item" style="background-image: url('./12.jpg');">
+        <div class="content"></div>
       </div>
     </div>
 
-    <!-- Slide Controls -->
-    <div class="button">
-      <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
-      <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
-    </div>
-
     <!-- Message at the End -->
-    <div class="message-container fade-in">
-      <p class="message">Hello Mom, <br>
+    <div class="special-message" id="specialMessage">
+      <p>Hello Mom, <br>
       You are my superhero. Your wisdom and love guide me through every twist and turn in life. The world shines brighter because of you. I love you so much! <br>
       You are the best mom ever. <br><br> Happy Mother's Day ❤❤ </p>
+      <a href="gallery.html" class="nav-button">View Our Memories</a>
     </div>
   </div>
 
   <script>
-    document.getElementById("openBtn").addEventListener("click", () => {
-      document.getElementById("intro").style.display = "none";
-      document.getElementById("mainContent").classList.remove("hidden");
-      document.getElementById("bgMusic").play();
+    // Add floating elements animation
+    function createFloatingElement() {
+      const roses = ['rose1.png', 'rose2.png', 'rose3.png', 'rose4.png'];
+      const element = document.createElement('div');
+      element.className = 'floating-element flower';
+      
+      const img = document.createElement('img');
+      img.src = roses[Math.floor(Math.random() * roses.length)];
+      img.alt = 'rose';
+      element.appendChild(img);
+      
+      element.style.left = Math.random() * 100 + 'vw';
+      element.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      document.querySelector('.floating-elements').appendChild(element);
+      
+      setTimeout(() => {
+        element.remove();
+      }, 5000);
+    }
+
+    setInterval(createFloatingElement, 2000);
+
+    // Slide navigation
+    const items = document.querySelectorAll('.item');
+    let currentIndex = 0;
+    const specialMessage = document.getElementById('specialMessage');
+
+    function updateSlide() {
+      items.forEach((item, index) => {
+        if (index === currentIndex) {
+          item.classList.add('active');
+          // Show special message only on last slide
+          if (index === items.length - 1) {
+            specialMessage.classList.add('show');
+          } else {
+            specialMessage.classList.remove('show');
+          }
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      if (currentIndex < items.length - 1) {
+        currentIndex++;
+        updateSlide();
+      }
+    }
+
+    // Add click/tap event listener to the entire document
+    document.addEventListener('click', (e) => {
+      // Don't trigger slide change if clicking on music toggle or special message
+      if (e.target.closest('#musicToggle') || e.target.closest('.special-message')) {
+        return;
+      }
+      if (currentIndex < items.length - 1) {
+        nextSlide();
+      }
     });
 
-    const next = document.querySelector('.next');
-    const prev = document.querySelector('.prev');
-    const slide = document.querySelector('.slide');
-
-    next.addEventListener('click', () => {
-      const items = document.querySelectorAll('.item');
-      slide.appendChild(items[0]);
+    // Add touch event listener for mobile
+    document.addEventListener('touchend', (e) => {
+      // Don't trigger slide change if touching music toggle or special message
+      if (e.target.closest('#musicToggle') || e.target.closest('.special-message')) {
+        return;
+      }
+      if (currentIndex < items.length - 1) {
+        nextSlide();
+      }
     });
 
-    prev.addEventListener('click', () => {
-      const items = document.querySelectorAll('.item');
-      slide.prepend(items[items.length - 1]);
-    });
-
-    setInterval(() => {
-      const items = document.querySelectorAll('.item');
-      slide.appendChild(items[0]);
-    }, 5000);
-
+    // Music toggle
     const music = document.getElementById("bgMusic");
     const musicToggle = document.getElementById("musicToggle");
 
@@ -132,6 +194,7 @@ Happy mother's Day ❤❤" 🎊🎉💝</div>
       }
     });
 
+    // Hearts animation
     const hearts = document.getElementById("heartsContainer");
     setInterval(() => {
       const heart = document.createElement("div");
@@ -142,19 +205,22 @@ Happy mother's Day ❤❤" 🎊🎉💝</div>
       setTimeout(() => heart.remove(), 5000);
     }, 300);
 
-    document.addEventListener('DOMContentLoaded', function() {
+    // Enhanced intro animation
+    document.getElementById("openBtn").addEventListener("click", () => {
+      const intro = document.getElementById("intro");
+      const mainContent = document.getElementById("mainContent");
+      
+      intro.style.animation = "fadeOut 1s forwards";
       setTimeout(() => {
-        document.getElementById('cakeCut').classList.remove('hidden');
-      }, 6000);
-
-      setInterval(() => {
-        const sparkle = document.createElement("div");
-        sparkle.className = "sparkle";
-        sparkle.style.left = Math.random() * 100 + "vw";
-        sparkle.style.top = Math.random() * 100 + "vh";
-        document.body.appendChild(sparkle);
-        setTimeout(() => sparkle.remove(), 1000);
-      }, 200);
+        intro.style.display = "none";
+        mainContent.classList.remove("hidden");
+        mainContent.style.animation = "fadeIn 1s forwards";
+        document.getElementById("bgMusic").play();
+        
+        // Show first slide
+        currentIndex = 0;
+        updateSlide();
+      }, 1000);
     });
   </script>
 </body>
